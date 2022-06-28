@@ -5,9 +5,6 @@
 ;; URL: https://github.com/paetzke/buftra.el
 ;; Version: 0.6
 
-;; This code is initially copied from go-mode.el (copyright the go-mode authors).
-;; See LICENSE or https://raw.githubusercontent.com/dominikh/go-mode.el/master/LICENSE
-
 ;;; Code:
 
 (defun buftra--apply-rcs-patch (patch-buffer)
