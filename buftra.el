@@ -9,7 +9,8 @@
 
 
 ;;; Commentary:
-;;
+;; makes it convenient to create new python projects within Emacs.
+
 
 ;;; Code:
 
