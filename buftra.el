@@ -3,7 +3,8 @@
 ;; Copyright (C) 2015-2016, Friedrich Paetzke <f.paetzke@gmail.com>
 ;; Author: Friedrich Paetzke <f.paetzke@gmail.com>
 ;; URL: https://github.com/paetzke/buftra.el
-;; Package-Version: 20220627.2236
+;; Package-Version: 20220627.2244
+;; Package-X-Original-Version: 20220627.2236
 ;; Version: 0.6
 
 
@@ -48,8 +49,7 @@
 
 
 (defun buftra--replace-region (filename)
-  "Adding a dummy comment for checkdoc.
-Argument FILENAME simple filename."
+  "Argument FILENAME simple filename."
   (delete-region (region-beginning) (region-end))
   (insert-file-contents filename))
 
@@ -112,9 +112,3 @@ Argument IGNORE-RETURN-CODE ignore ret code."
 
 (provide 'buftra)
 ;; buftra.el ends here
-
-;;; buftra.el ends here
-
-(provide 'buftra-20220627.2236)
-
-;;; buftra-20220627.2236.el ends here
