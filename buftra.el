@@ -1,5 +1,4 @@
-;;; buftra.el -- for docstring support to py
-
+;;; buftra.el -- for docstring support to py.
 
 ;; Copyright (C) 2015-2016, Friedrich Paetzke <f.paetzke@gmail.com>
 ;; Author: Friedrich Paetzke <f.paetzke@gmail.com>
