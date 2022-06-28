@@ -3,7 +3,12 @@
 ;; Copyright (C) 2015-2016, Friedrich Paetzke <f.paetzke@gmail.com>
 ;; Author: Friedrich Paetzke <f.paetzke@gmail.com>
 ;; URL: https://github.com/paetzke/buftra.el
+;; Package-Version: 20220627.2236
 ;; Version: 0.6
+
+
+;;; Commentary:
+;;
 
 ;;; Code:
 
@@ -16,7 +21,7 @@
         (goto-char (point-min))
         (while (not (eobp))
           (unless (looking-at "^\\([ad]\\)\\([0-9]+\\) \\([0-9]+\\)")
-            (error "invalid rcs patch or internal error in buftra--apply-rcs-patch"))
+            (error "Invalid rcs patch or internal error in buftra--apply-rcs-patch"))
           (forward-line)
           (let ((action (match-string 1))
                 (from (string-to-number (match-string 2)))
@@ -39,10 +44,12 @@
                 (kill-whole-line len)
                 (pop kill-ring)))
              (t
-              (error "invalid rcs patch or internal error in buftra--apply-rcs-patch")))))))))
+              (error "Invalid rcs patch or internal error in buftra--apply-rcs-patch")))))))))
 
 
 (defun buftra--replace-region (filename)
+  "Adding a dummy comment for checkdoc.
+Argument FILENAME simple filename."
   (delete-region (region-beginning) (region-end))
   (insert-file-contents filename))
 
@@ -50,7 +57,7 @@
 (defun buftra--get-tmp-file-name ()
   "Return the temporal filename used to save the formatted file.
 
-It uses `projectile-project-root' as relative directory to build the filename."
+It uses variable `projectile-project-root' as relative directory to build the filename."
   (make-temp-file
    (concat
     (replace-regexp-in-string "/" "-" (file-relative-name (buffer-file-name) (projectile-project-root))) "-" executable-name)
@@ -61,7 +68,12 @@ It uses `projectile-project-root' as relative directory to build the filename."
                                            only-on-region
                                            file-extension
                                            ignore-return-code)
-  "Formats the current buffer according to the executable"
+  "Formats the current buffer according to the executable.
+Argument EXECUTABLE-NAME simple exec.
+Argument EXECUTABLE-CALL exec call.
+Argument ONLY-ON-REGION only on region.
+Argument FILE-EXTENSION f extension.
+Argument IGNORE-RETURN-CODE ignore ret code."
   (when (not (executable-find executable-name))
     (error (format "%s command not found." executable-name)))
   (let ((tmpfile (buftra--get-tmp-file-name))
@@ -100,3 +112,9 @@ It uses `projectile-project-root' as relative directory to build the filename."
 
 (provide 'buftra)
 ;; buftra.el ends here
+
+;;; buftra.el ends here
+
+(provide 'buftra-20220627.2236)
+
+;;; buftra-20220627.2236.el ends here
