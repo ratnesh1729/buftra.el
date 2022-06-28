@@ -1,4 +1,4 @@
-;;; buftra.el -- for docstring support to py.
+;;; buftra.el --- for docstring support to py.
 
 ;; Copyright (C) 2015-2016, Friedrich Paetzke <f.paetzke@gmail.com>
 ;; Author: Friedrich Paetzke <f.paetzke@gmail.com>
@@ -9,6 +9,7 @@
 
 
 ;;; Commentary:
+
 ;; makes it convenient to create new python projects within Emacs.
 
 
@@ -112,4 +113,5 @@ Argument IGNORE-RETURN-CODE ignore ret code."
     (delete-file tmpfile)))
 
 (provide 'buftra)
+
 ;; buftra.el ends here
